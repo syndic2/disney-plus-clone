@@ -5,7 +5,7 @@ export const Logo = styled.img`
 `;
 
 export const Nav = styled.nav`
-	background: #090B13;
+	background-color: #090B13;
 	display: flex;
 	column-gap: 40px;
 	align-items: center;
@@ -36,7 +36,7 @@ export const NavMenu = styled.div`
 
 			&:after {
 				content: '';
-				background: white;
+				background-color: white;
 				position: absolute;
 				left: 0;
 				right: 0;

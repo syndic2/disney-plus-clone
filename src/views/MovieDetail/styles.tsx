@@ -27,7 +27,7 @@ export const Title = styled.div`
 	min-width: 200px;
 	height: 30vh;
 	min-height: 170px;
-	margin-top: 25px;
+	margin-top: 60px;
 
 	img {
 		object-fit: contain;
@@ -47,6 +47,7 @@ export const Description = styled.div`
 	font-size: 20px;
 	line-height: 1.4;
 	margin-top: 16px;
+	max-width: 750px;
 `;
 
 export const Controls = styled.div`
@@ -57,7 +58,7 @@ export const Controls = styled.div`
 `;
 
 export const PlayButton = styled.button`
-	background: rgb(249, 249, 249);
+	background-color: rgb(249, 249, 249);
 	cursor: pointer;
 	display: flex;
 	align-items: center;
@@ -69,18 +70,18 @@ export const PlayButton = styled.button`
 	padding: 8px 24px;
 
 	&:hover {
-		background: rgb(198, 198, 198);
+		background-color: rgb(198, 198, 198);
 	}
 `;
 
 export const TrailerButton = styled(PlayButton)`
-	background: rgb(0, 0, 0, 0.3);
+	background-color: rgb(0, 0, 0, 0.3);
 	color: rgb(249, 249, 249);
 	border: 1px solid rgb(249, 249, 249);
 `;
 
 export const PlaylistButton = styled.button`
-	background: rgba(0, 0, 0, 0.6);
+	background-color: rgba(0, 0, 0, 0.6);
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
@@ -97,5 +98,5 @@ export const PlaylistButton = styled.button`
 `;
 
 export const GroupWatchButton = styled(PlaylistButton)`
-	background: rgb(0, 0, 0);
+	background-color: rgb(0, 0, 0);
 `;
