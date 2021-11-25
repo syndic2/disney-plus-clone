@@ -1,18 +1,24 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-import Home from '../components/Home';
+import Home from '../views/Home';
+import MovieDetail from '../views/MovieDetail';
 
-const App = () => {
-
+const App: React.FC = () => {
 	return (
-		<div className="App">
+		<Router>
 			<Header />
-			<Home />
+			<Routes>
+				<Route path='/' element={<Home />} />
+				<Route path='/movies'>
+					<Route path=':movieId' element={<MovieDetail />} />
+				</Route>
+			</Routes>
 			<Footer />
-		</div>
+		</Router>
 	);
 };
 
