@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { movies } from '../../../mock-data/movies.json';
-import { db, collection, getDocs, addDoc } from '../../../config/firebase';
+import { db, collection, getDocs, addDoc } from '../../../config';
 import { setMovies } from '../../../store/movie/slice';
 
 import { Movie } from '../../../models';
@@ -10,10 +10,9 @@ import { Movie } from '../../../models';
 import ImgSlider from '../../components/utilities/ImgSlider';
 import Viewers from '../../components/Viewers';
 import Movies from '../../components/Movies';
-
 import { Container } from './styles';
 
-const Home: React.FC = () => {
+const Home: React.FC = (): JSX.Element => {
 	const dispatch = useDispatch();
 
 	const addBulkMovies = async () => {
@@ -40,9 +39,8 @@ const Home: React.FC = () => {
 
 			dispatch(setMovies(movies));
 		};
-
 		setupMovies();
-	}, [dispatch]);
+	}, []);
 
 	return (
 		<main>

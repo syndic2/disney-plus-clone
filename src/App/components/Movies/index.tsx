@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
+import { selectMovies } from '../../../store/movie/slice';
 import { Movie } from '../../../models';
 
-import { selectMovies } from '../../../store/movie/slice';
 import { Container, Wrapper, Content } from './styles';
 
-const Movies: React.FC = () => {
+const Movies: React.FC = (): JSX.Element => {
 	const movies: Movie[] = useSelector(selectMovies);
 
 	return (

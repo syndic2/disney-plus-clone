@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, Wrapper } from './styles';
 
-const Viewers: React.FC = () => {
+const Viewers: React.FC = (): JSX.Element => {
 	return (
 		<Container>
 			<Wrapper>

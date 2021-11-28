@@ -1,9 +1,39 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { Logo, Nav, NavMenu, UserImg } from './styles';
+import { auth, provider, signInWithPopup, onAuthStateChanged } from '../../../config';
+import { setSignIn, setSignOut, selectAuthName, selectAuthPhoto } from '../../../store/auth/slice';
 
-const Header: React.FC = () => {
+import { LoginButton, Logo, Nav, NavMenu, UserImg } from './styles';
+
+const Header: React.FC = (): JSX.Element => {
+	const navigate = useNavigate();
+	const dispatch = useDispatch();
+	const authName = useSelector(selectAuthName);
+	const authPhoto = useSelector(selectAuthPhoto);
+
+	const onSignIn = async () => {
+		const authData = await signInWithPopup(auth, provider);
+		const { displayName, email, photoURL } = authData.user;
+
+		dispatch(setSignIn({ name: displayName, email: email, photo: photoURL }));
+	};
+
+	const onSignOut = async () => {
+		await auth.signOut();
+		dispatch(setSignOut());
+		navigate('/login');
+	};
+
+	useEffect(() => {
+		onAuthStateChanged(auth, (user) => {
+			if (user) {
+				const { displayName, email, photoURL } = user;
+				dispatch(setSignIn({ name: displayName, email: email, photo: photoURL }));
+			}
+		});
+	}, []);
 
 	return (
 		<header>
@@ -37,7 +67,11 @@ const Header: React.FC = () => {
 						<span>SERIES</span>
 					</Link>
 				</NavMenu>
-				<UserImg src="https://lh3.googleusercontent.com/ogw/ADea4I5pBJdMw8qakuqT9qh_oypM78wcI5uovQvnIoqX=s32-c-mo" />
+				{
+					authName === ''
+						? <LoginButton onClick={onSignIn}>LOGIN</LoginButton>
+						: <UserImg src={authPhoto} onClick={onSignOut} />
+				}
 			</Nav>
 		</header>
 	);

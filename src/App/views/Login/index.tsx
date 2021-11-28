@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, CTA, CTALogoOne, CTALogoTwo, SignUp, Description } from './styles';
 
-const Login: React.FC = () => {
+const Login: React.FC = (): JSX.Element => {
 	return (
 		<Container>
 			<CTA>

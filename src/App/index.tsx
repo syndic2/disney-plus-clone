@@ -8,7 +8,7 @@ import Login from './views/Login';
 import Home from './views/Home';
 import MovieDetail from './views/MovieDetail';
 
-const App: React.FC = () => {
+const App: React.FC = (): JSX.Element => {
 	return (
 		<Router>
 			<Header />

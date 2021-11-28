@@ -1,7 +1,8 @@
 import { initializeApp, FirebaseApp } from 'firebase/app';
-import { getFirestore, collection, doc, getDocs, setDoc, addDoc } from 'firebase/firestore';
-//import 'firebase/compat/auth';
-//import 'firebase/compat/firestore';
+import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'firebase/auth';
+import { getFirestore, collection, doc, getDocs, getDoc, setDoc, addDoc } from 'firebase/firestore';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 
 const firebaseConfig: any = {
 	apiKey: "AIzaSyDplrnLNHB_B-T-OZCONJr8LkjOxkbkdc8",
@@ -13,7 +14,9 @@ const firebaseConfig: any = {
 };
 
 const firebaseApp: FirebaseApp = initializeApp(firebaseConfig);
+const auth = getAuth();
+const provider = new GoogleAuthProvider();
 const db = getFirestore(firebaseApp);
 
-export { db, collection, doc, getDocs, setDoc, addDoc };
+export { auth, provider, signInWithPopup, onAuthStateChanged, db, collection, doc, getDocs, getDoc, setDoc, addDoc };
 

@@ -1,5 +1,22 @@
 import styled from 'styled-components';
 
+export const LoginButton = styled.button`
+	background-color: rgba(0, 0, 0, 0.6);
+	color: #F9F9F9;
+	cursor: pointer;
+	border: 1px solid #F9F9F9;
+	border-radius: 4px;
+	letter-spacing: 1.5px;
+	transition: all 0.2s ease 0s;
+	padding: 8px 16px;
+
+	&:hover {
+		background-color: #F9F9F9;
+		color: black;
+		border-color: transparent;
+	}
+`;
+
 export const Logo = styled.img`
 	width: 80px;
 `;

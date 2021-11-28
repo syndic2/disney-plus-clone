@@ -3,7 +3,7 @@ import { Settings } from 'react-slick';
 
 import { Carousel, Wrapper } from './styles';
 
-const ImgSlider: React.FC = () => {
+const ImgSlider: React.FC = (): JSX.Element => {
 	const settings: Settings = {
 		dots: true,
 		infinite: true,
