@@ -30,6 +30,8 @@ const Home: React.FC = (): JSX.Element => {
 	};
 
 	useEffect(() => {
+		document.title = 'Disney+ Clone | ReactTS';
+
 		const setupMovies = async () => {
 			const movies = await getMovies();
 

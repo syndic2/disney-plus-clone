@@ -28,7 +28,9 @@ const MovieDetail: React.FC = (): JSX.Element => {
 			const movieSnapshot = await getDoc(movieRef);
 
 			if (movieSnapshot.exists()) {
-				setMovie(movieSnapshot.data() as Movie);
+				const movie = movieSnapshot.data() as Movie;
+				document.title = movie.title;
+				setMovie(movie);
 			}
 		};
 		getMovie();

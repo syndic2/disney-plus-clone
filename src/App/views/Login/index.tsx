@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { Container, CTA, CTALogoOne, CTALogoTwo, SignUp, Description } from './styles';
 
 const Login: React.FC = (): JSX.Element => {
+	useEffect(() => {
+		document.title = 'Disney+ Clone | Login';
+	}, []);
+
 	return (
 		<Container>
 			<CTA>
