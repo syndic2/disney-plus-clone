@@ -21,9 +21,11 @@ export const NavMenu = styled.div`
 	column-gap: 25px;
 
 	a {
+		color: white;
 		display: flex;
 		align-items: center;
 		column-gap: 5px;
+		text-decoration: none;
 
 		img {
 			height: 20px;
