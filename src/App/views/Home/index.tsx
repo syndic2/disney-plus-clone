@@ -42,7 +42,7 @@ const Home: React.FC = (): JSX.Element => {
 			dispatch(setMovies(movies));
 		};
 		setupMovies();
-	}, []);
+	});
 
 	return (
 		<main>

@@ -33,7 +33,7 @@ const Header: React.FC = (): JSX.Element => {
 				dispatch(setSignIn({ name: displayName, email: email, photo: photoURL }));
 			}
 		});
-	}, []);
+	});
 
 	return (
 		<header>

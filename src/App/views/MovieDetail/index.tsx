@@ -34,7 +34,7 @@ const MovieDetail: React.FC = (): JSX.Element => {
 			}
 		};
 		getMovie();
-	}, []);
+	});
 
 	return (
 		<Container>
